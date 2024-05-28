@@ -1,0 +1,28 @@
+﻿@model List<Categories>
+
+<div class="container">
+    <table class="table table-bordered table-striped text-center">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+
+                @if(ViewBag.Admin){              
+                <th><a class="btn btn-light" asp-controller="Category" asp-action="NewCategory">Create New Category</a></th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model.OrderBy(u => u.Category_id))
+            {
+                <tr>
+                    <td>
+                        @obj.Name
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+</div>

@@ -1,0 +1,74 @@
+﻿@model List<DetailsOrders>
+
+<div class="container">
+    <table class="table table-bordered table-striped text-center">
+        <thead>
+            <tr>
+                <th>
+                    Pedido Id
+                </th>
+                <th>
+                    Nombre Producto 
+                </th>
+                <th>
+                    Categoria Producto
+                </th>
+                <th>
+                    Nombre Cliente
+                </th>
+                <th>
+                    Apellido Cliente
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Prize
+
+                </th>
+                <th>
+                    State
+                </th>
+                <th>
+                    Order_date
+                </th>
+                <th><a class="btn btn-light" asp-controller="Admin" asp-action="NewOrderDetail">Create</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model.OrderBy(u=>u.Detail_id))
+            {
+                <tr>
+                    <td>
+                        @obj.Order.Order_id
+                    </td>
+                    <td>
+                       @obj.Product.Name
+                    </td>
+                    <td>
+                        @obj.Product.Category.Name
+                    </td>
+                    <td>
+                        @obj.Order.Client.Name
+                    </td>
+                    <td>
+                        @obj.Order.Client.Surname
+                    </td>
+                    <td>
+                        @obj.Quantity
+                    </td>
+                    <td>
+                        @obj.Prize
+                    </td>
+                    <td>
+                        @obj.Order.State
+                    </td>
+                    <td>
+                        @obj.Order.Order_date
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+</div>

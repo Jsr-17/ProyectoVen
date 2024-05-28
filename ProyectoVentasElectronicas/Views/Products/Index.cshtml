@@ -1,0 +1,53 @@
+﻿@model List<Products>
+
+<div class="container">
+    <table class="table table-bordered table-striped text-center">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Category
+                </th>
+                <th>
+                    Suplier
+                </th>
+                @if (ViewBag.Admin)
+                {
+                <th><a class="btn btn-light" asp-controller="Products" asp-action="NewProduct">Create New Product</a></th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model.OrderBy(u => u.Product_id))
+            {
+                <tr>
+                    <td>
+                        @obj.Name
+                    </td>
+                    <td>
+                        @obj.Description
+                    </td>
+                    <td>
+                        @obj.Price
+                    </td>
+                    <td>
+                        @obj.Category.Name
+                    </td>
+                    <td>
+                        @obj.Suplier.Name
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+</div>

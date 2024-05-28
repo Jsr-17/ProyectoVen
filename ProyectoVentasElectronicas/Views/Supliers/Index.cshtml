@@ -1,0 +1,39 @@
+﻿@model List<Supliers>
+
+<div class="container">
+        <table class="table table-bordered table-striped text-center">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Telephone
+                    </th>
+                    <th>Direction</th>
+                 @if (ViewBag.Admin)
+                {
+                    <th><a class="btn btn-light" asp-controller="Supliers" asp-action="NewSuplier">Create New Suplier</a></th>
+                }
+            </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model.OrderBy(u => u.Suplier_id))
+                {
+                    <tr>
+                        <td>
+                            @obj.Name
+                        </td>
+                        <td>
+                            @obj.Telephone
+                        </td>
+                        <td>
+                            @obj.Direction
+                        </td>
+                        
+                    </tr>
+                }
+
+            </tbody>
+
+</div>

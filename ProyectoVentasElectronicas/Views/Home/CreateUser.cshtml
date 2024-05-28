@@ -1,0 +1,74 @@
+﻿@model ProyectoVentasElectronicas.Models.Clients
+
+@{
+    ViewData["Title"] = "Create User";
+}
+
+<h1 class="mb-4">Create User</h1>
+
+<h4>Clients</h4>
+<hr />
+<div class="container">
+    <div class="row">
+        <form asp-action="CreateUser">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="control-label mb-1"></label>
+                <input asp-for="Name" class="form-control"  placeholder="Type here"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Surname"class="control-label mb-1"></label>
+                <input asp-for="Surname" class="form-control"  placeholder="Type here"/>
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Email"class="control-label mb-1"></label>
+                <input asp-for="Email" class="form-control"  placeholder="Type here"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Telephone"class="control-label mb-1"></label>
+                <input asp-for="Telephone" class="form-control"  placeholder="Type here"/>
+                <span asp-validation-for="Telephone" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Direction"class="control-label mb-1"></label>
+                <input asp-for="Direction" class="form-control"  placeholder="Type here"/>
+                <span asp-validation-for="Direction" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="City"class="control-label mb-1"></label>
+                <input asp-for="City" class="form-control"  placeholder="Type here"/>
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Country"class="control-label mb-1"></label>
+                <input asp-for="Country" class="form-control"  placeholder="Type here"/>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Username"class="control-label mb-1"></label>
+                <input asp-for="Username" class="form-control"  placeholder="Type here"/>
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Password"class="control-label mb-1"></label>
+                <input asp-for="Password" class="form-control" type="password"  placeholder="Type here"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <span  class=" mb-1">Confirm Password</span>
+                <input name="Confirm Password" class="form-control" type="password" placeholder="Type here" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

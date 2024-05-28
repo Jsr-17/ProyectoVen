@@ -1,0 +1,21 @@
+﻿
+<div class="container">
+    <div class="row">
+       
+
+        
+            <div class="col-md-6">
+                <ol>
+                <li><a asp-controller="Supliers" asp-action="Index">Go to Supliers</a></li>
+                <li><a asp-controller="Products" asp-action="Index">Go to Products</a></li>
+                <li><a asp-controller="Category" asp-action="Index">Go to Categories</a></li>
+                @if (ViewBag.Admin == true)
+                {
+                    <li>
+                        <a asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
+                    </li>
+                }
+                </ol>
+            </div>
+    </div>
+</div>
